@@ -1,63 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cutting Tools Inc</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav class='nav'>
-        <div class="nav-content">
-            <div class='logo-container'>
-                <img
-                src='./photos/CTI-logo-svg.svg'
-                alt='Cutting Tools Inc Logo'
-                class="img"
-                />
-            </div>
-            <div class="info">
-                <a href="https://online.fliphtml5.com/yzmoq/zvqa/#p=1" class="catalogue">Catalogue</a>
-                <button class="contact-btn">
-                    Contact Us
-                </button>
-            </div>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="body">
+    <div class="overlay">
+      <div class="nav-menu-wrap">
+        <a
+          href="https://online.fliphtml5.com/yzmoq/zvqa/#p=1"
+          class="mobile-link mobile-catalogue-link"
+          >Catalogue</a
+        >
+        <a href="#contact" class="mobile-link mobile-contact-link">Contact</a>
+
+        <img
+          src="./photos/close x.png"
+          alt="x to close nav menu"
+          class="close-mobile-menu-btn"
+          tabindex="0"
+        />
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav-content">
+        <div class="logo-container">
+          <img
+            src="./photos/CTI-logo-svg.svg"
+            alt="Cutting Tools Inc Logo"
+            class="img"
+          />
         </div>
+        <div class="info">
+          <a
+            href="https://online.fliphtml5.com/yzmoq/zvqa/#p=1"
+            class="catalogue"
+            >Catalogue</a
+          >
+
+          <a href="#contact" class="contact-btn">Contact Us</a>
+        </div>
+        <button class="hamburger-menu">
+          <img src="./photos/hamburger-menu.png" alt="hamburger menu button" />
+        </button>
+      </div>
     </nav>
     <section class="hero">
-        <div class="hero-wrap">
-            <div class="hero-text">
-                <h2 class='tag'>Always</h2>
-                <h2 class='tag'>Thinking</h2>
-                <h2 class='tag'>Productivity.</h2>
-                <p class='sub-tag'>Since 1969</p>
-            </div>
+      <div class="hero-wrap">
+        <div class="hero-text">
+          <h2 class="tag">Always</h2>
+          <h2 class="tag">Thinking</h2>
+          <h2 class="tag">Productivity.</h2>
+          <p class="sub-tag">Since 1969</p>
         </div>
+      </div>
     </section>
     <main class="home-main">
-        <img src="./photos/maintenance-image.jpg" alt="person in a hard hat" class="maintenance-img">
-        <h1 class="main-header">Our site is currently undergoing maintenance and should be back soon. You can find our contact information below:</h1>
-        <div class="contact-us-wrap">
-            <div class="contact-us-header">
-                <p class="contact-us-title">Contact Us</p>
-                <img src="./photos/phone-icon.jpg" alt="phone icon" class="phone-icon">
-            </div>
-            <div class="contact-info">
-                <h3>Mt. Juliet TN Location:</h3>
-                <p><span class="fw-500">Phone Number:</span> (615) 391-0200</p>
-                <p><span class="fw-500">Address:</span> 1002 Pleasant Grove Pl,</p>
-                <p>Mt. Juliet, TN 37122</p>
-            </div>
-            <div class="contact-info">
-                <h3>Louisville KY Location:</h3>
-                <p><span class="fw-500">Phone Number:</span> (502) 896-2353</p>
-                <p><span class="fw-500">Address:</span>13029 Middletown Industrial Blvd,</p>
-                <p>Louisville, KY 40223</p>
-            </div>
+      <img
+        src="./photos/maintenance-image.jpg"
+        alt="person in a hard hat"
+        class="maintenance-img"
+      />
+      <h1 class="main-header">
+        Our site is currently undergoing maintenance and should be back soon.
+        You can find our catalogue
+        <a
+          href="https://online.fliphtml5.com/yzmoq/zvqa/#p=1"
+          class="catalouge-link"
+          >here</a
+        >
+        and our contact information below:
+      </h1>
+      <div class="contact-us-wrap" id="contact">
+        <div class="contact-us-header">
+          <p class="contact-us-title">Contact Us</p>
+          <img
+            src="./photos/phone-icon.jpg"
+            alt="phone icon"
+            class="phone-icon"
+          />
         </div>
+        <div class="contact-info">
+          <h3>Mt. Juliet TN Location:</h3>
+          <p>
+            <b>Phone Number:</b><br />
+            (615) 391-0200
+          </p>
+          <p>
+            <b>Address:</b><br />
+            1002 Pleasant Grove Pl,
+          </p>
+          <p>Mt. Juliet, TN 37122</p>
+        </div>
+        <div class="contact-info">
+          <h3>Louisville KY Location:</h3>
+          <p>
+            <b>Phone Number:</b><br />
+            (502) 896-2353
+          </p>
+          <p><b>Address:</b><br />13029 Middletown Industrial Blvd,</p>
+          <p>Louisville, KY 40223</p>
+        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
