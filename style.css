@@ -208,6 +208,7 @@ a {
   top: 8px;
   width: 30px;
   height: 30px;
+  border-radius: 5px;
 }
 
 .contact-info {
