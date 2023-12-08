@@ -31,6 +31,11 @@ a {
   margin: 0 auto;
   padding-left: 2rem;
   font-size: 18px;
+  /* position: sticky; */
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .nav-content {
@@ -85,13 +90,14 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  left: 200%;
+  left: 0;
   bottom: 0;
   height: 100vh;
   width: 100vw;
   z-index: 5;
   padding-top: 15rem;
   /* transition: left 250ms ease-in-out; */
+  display: none;
 }
 
 .mobile-link {
@@ -117,12 +123,15 @@ a {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .close-mobile-menu-btn {
   position: absolute;
   top: 5%;
   right: 10%;
+  width: 33px;
+  height: 34px;
   cursor: pointer;
 }
 

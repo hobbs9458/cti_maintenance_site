@@ -9,27 +9,54 @@ const mobileCatelogueLink = document.querySelector('.mobile-catalogue-link');
 
 navWrap.addEventListener('click', (e) => e.stopPropagation());
 
-closeNavMenuBtn.addEventListener('click', () => {
-  overlay.style.left = '200%';
+function closeMenu() {
+  overlay.removeEventListener('keydown', handleModalKeydown);
+  overlay.style.display = 'none';
   body.style.overflowY = 'visible';
-  catalogueLink.setAttribute('tabIndex', '0');
-});
+}
 
-overlay.addEventListener('click', () => {
-  overlay.style.left = '200%';
-  body.style.overflowY = 'visible';
-  catalogueLink.setAttribute('tabIndex', '0');
-});
-
-mobileContactLink.addEventListener('click', () => {
-  overlay.style.left = '200%';
-  body.style.overflowY = 'visible';
-  catalogueLink.setAttribute('tabIndex', '0');
-});
-
-hamburgerBtn.addEventListener('click', () => {
-  overlay.style.left = '0';
+function openMenu() {
+  overlay.style.display = 'block';
   body.style.overflowY = 'hidden';
-  catalogueLink.setAttribute('tabIndex', '-1');
-  mobileCatelogueLink.focus();
+  closeNavMenuBtn.focus();
+  overlay.addEventListener('keydown', handleModalKeydown);
+}
+
+closeNavMenuBtn.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
+mobileContactLink.addEventListener('click', closeMenu);
+hamburgerBtn.addEventListener('click', openMenu);
+
+closeNavMenuBtn.addEventListener('keydown', (e) => {
+  if (e.keyCode === 13) {
+    closeMenu();
+
+    setTimeout(() => {
+      // Restore focus to the element that had focus before the modal was opened
+      // allow time to close modal
+      if (hamburgerBtn) {
+        hamburgerBtn.focus();
+      }
+    }, 0);
+  }
 });
+
+function handleModalKeydown(event) {
+  if (event.key === 'Tab') {
+    const focusableElements = overlay.querySelectorAll(
+      'a[href], button, textarea, input, select'
+    );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    if (event.shiftKey && document.activeElement === firstFocusable) {
+      // Shift + Tab on the first focusable element, set focus to the last
+      event.preventDefault();
+      lastFocusable.focus();
+    } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+      // Tab on the last focusable element, set focus to the first
+      event.preventDefault();
+      closeNavMenuBtn.focus();
+    }
+  }
+}
